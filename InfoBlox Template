@@ -1,0 +1,23 @@
+#This will allow you to work with InfloBlox API, this is just a template to get started what you do after this depends on your requirements
+
+import requests
+
+#url = "https://ipam.companyx.com/wapi/v2.11.5/member" #works, version 2.11.5 seems to be the most of up date version
+#url = "https://ipam.companyx.com/wapi/v2.11.5/networkview" #This command gets the certain data points from the
+#url = "https://ipam.companyx.com/wapi/v2.11/network" #This is another example you could use however it works however the results is too large it states
+#url = "https://ipam.companyx.com/wapi/v2.11/ #This is the basic URL to start a new response request.
+url = "https://ipam.companyx.com/wapi/v2.11.5/network?_max_results=10000"
+
+gm_user = 'tvm-ro' #random user name for InfoBlox User account to work with APIs
+gm_pwd = ":Ij'%W%.88DkMzlKOv0j" #this is random created password as an example 
+
+print("\n")
+
+response = requests.get(url, verify=False, auth=(gm_user, gm_pwd)) #This will request data from the Infoblox server.
+
+print(f"Primary Response message = {response}") #This prints out the Response code #
+
+print(f"Secondary Method of information: {response.text.encode('utf8')}") #This prints out the response data
+#print(response.text.encode('utf8'))
+
+print("\nEnd of Program. No Files Created. Have a Good Day!") #Program ending information.
